@@ -5,5 +5,8 @@
 out/
 node_modules/
 
+# VS Code test harness — downloads a VS Code binary for the integration tests
+.vscode-test/
+
 # Package artefacts
 *.vsix

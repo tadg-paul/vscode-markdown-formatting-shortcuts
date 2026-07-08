@@ -1,0 +1,149 @@
+{
+  "name": "vscode-markdown-formatting-shortcuts",
+  "displayName": "Markdown Formatting Shortcuts",
+  "description": "Keyboard shortcuts to toggle bold, italic, code, and strikethrough in Markdown and Orgmode.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Keymaps",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "orgmode",
+    "formatting",
+    "shortcuts",
+    "bold",
+    "italic"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:org"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdownShortcuts.toggleBold",
+        "title": "Toggle Bold",
+        "category": "Markdown Shortcuts"
+      },
+      {
+        "command": "markdownShortcuts.toggleItalic",
+        "title": "Toggle Italic",
+        "category": "Markdown Shortcuts"
+      },
+      {
+        "command": "markdownShortcuts.toggleCode",
+        "title": "Toggle Code",
+        "category": "Markdown Shortcuts"
+      },
+      {
+        "command": "markdownShortcuts.toggleStrikethrough",
+        "title": "Toggle Strikethrough",
+        "category": "Markdown Shortcuts"
+      },
+      {
+        "command": "markdownShortcuts.clearFormatting",
+        "title": "Clear All Formatting",
+        "category": "Markdown Shortcuts"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "markdownShortcuts.toggleBold",
+        "key": "ctrl+s ctrl+b",
+        "mac": "cmd+s cmd+b",
+        "when": "editorTextFocus && (editorLangId == markdown || editorLangId == org)"
+      },
+      {
+        "command": "markdownShortcuts.toggleItalic",
+        "key": "ctrl+s ctrl+i",
+        "mac": "cmd+s cmd+i",
+        "when": "editorTextFocus && (editorLangId == markdown || editorLangId == org)"
+      },
+      {
+        "command": "markdownShortcuts.toggleCode",
+        "key": "ctrl+s ctrl+`",
+        "mac": "cmd+s cmd+`",
+        "when": "editorTextFocus && (editorLangId == markdown || editorLangId == org)"
+      },
+      {
+        "command": "markdownShortcuts.toggleStrikethrough",
+        "key": "ctrl+s ctrl+-",
+        "mac": "cmd+s cmd+-",
+        "when": "editorTextFocus && (editorLangId == markdown || editorLangId == org)"
+      },
+      {
+        "command": "markdownShortcuts.clearFormatting",
+        "key": "ctrl+s ctrl+space",
+        "mac": "cmd+s cmd+space",
+        "when": "editorTextFocus && editorHasSelection && (editorLangId == markdown || editorLangId == org)"
+      }
+    ],
+    "configuration": {
+      "title": "Markdown Formatting Shortcuts",
+      "properties": {
+        "markdownShortcuts.applyToSelectionOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "When true, toggle commands do nothing on an empty selection. When false (default), toggle commands insert the markers at the cursor position and place the cursor between them."
+        },
+        "markdownShortcuts.boldMarker": {
+          "type": "string",
+          "default": "**",
+          "description": "Prefix and suffix used to toggle bold. Language-scope with [markdown] or [org] to vary per language."
+        },
+        "markdownShortcuts.italicMarker": {
+          "type": "string",
+          "default": "*",
+          "description": "Prefix and suffix used to toggle italic. Language-scope with [markdown] or [org] to vary per language."
+        },
+        "markdownShortcuts.inlineCodeMarker": {
+          "type": "string",
+          "default": "`",
+          "description": "Prefix and suffix used to toggle inline code. Language-scope with [markdown] or [org] to vary per language."
+        },
+        "markdownShortcuts.blockCodeOpen": {
+          "type": "string",
+          "default": "```",
+          "description": "Opening marker for a code block. Language-scope with [markdown] or [org] to vary per language."
+        },
+        "markdownShortcuts.blockCodeClose": {
+          "type": "string",
+          "default": "```",
+          "description": "Closing marker for a code block. Language-scope with [markdown] or [org] to vary per language."
+        },
+        "markdownShortcuts.blockCodeDefaultLanguage": {
+          "type": "string",
+          "default": "",
+          "description": "Default language identifier appended to the opening code fence (Markdown) or #+BEGIN_SRC (Orgmode)."
+        },
+        "markdownShortcuts.strikethroughMarker": {
+          "type": "string",
+          "default": "~~",
+          "description": "Prefix and suffix used to toggle strikethrough. Language-scope with [markdown] or [org] to vary per language."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.3.9",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.3"
+  },
+  "license": "MIT",
+  "author": "Tadg Paul"
+}
