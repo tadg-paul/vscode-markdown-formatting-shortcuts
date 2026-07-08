@@ -27,7 +27,7 @@ All delimiter pairs are configurable in VS Code Settings (`File → Preferences 
 
 | Setting | Default | Description |
 |---|---|---|
-| `applyToSelectionOnly` | `true` | When `true`, shortcuts do nothing if no text is selected |
+| `applyToSelectionOnly` | `false` | When `false` (default), toggle commands insert markers at the cursor if no text is selected. When `true`, toggle commands do nothing if no text is selected. |
 
 ### Markdown defaults
 

@@ -1,0 +1,9 @@
+# Agent scratch
+.agent/
+
+# Build output
+out/
+node_modules/
+
+# Package artefacts
+*.vsix
