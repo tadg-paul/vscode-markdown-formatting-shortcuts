@@ -20,9 +20,10 @@
   ],
   "activationEvents": [
     "onLanguage:markdown",
-    "onLanguage:org"
+    "onLanguage:org",
+    "onStartupFinished"
   ],
-  "main": "./out/extension.js",
+  "main": "./out/src/extension.js",
   "contributes": {
     "commands": [
       {
@@ -83,6 +84,16 @@
         "when": "editorTextFocus && editorHasSelection && (editorLangId == markdown || editorLangId == org)"
       }
     ],
+    "configurationDefaults": {
+      "[org]": {
+        "markdownShortcuts.boldMarker": "*",
+        "markdownShortcuts.italicMarker": "/",
+        "markdownShortcuts.inlineCodeMarker": "=",
+        "markdownShortcuts.blockCodeOpen": "#+BEGIN_SRC",
+        "markdownShortcuts.blockCodeClose": "#+END_SRC",
+        "markdownShortcuts.strikethroughMarker": "+"
+      }
+    },
     "configuration": {
       "title": "Markdown Formatting Shortcuts",
       "properties": {
