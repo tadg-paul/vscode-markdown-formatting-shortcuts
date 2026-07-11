@@ -2,7 +2,7 @@
   "name": "vscode-markdown-formatting-shortcuts",
   "displayName": "Markdown Formatting Shortcuts",
   "description": "Keyboard shortcuts to toggle bold, italic, code, and strikethrough in Markdown and Orgmode.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.85.0"
   },
