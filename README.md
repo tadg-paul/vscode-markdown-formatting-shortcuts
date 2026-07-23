@@ -67,4 +67,4 @@ npm test
 
 ## Licence
 
-MIT © Taḋg Paul
+MIT © Tadhg O'Brien
